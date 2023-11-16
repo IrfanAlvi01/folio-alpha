@@ -1,15 +1,19 @@
-import { Box, Grid } from "@mui/material";
 import React from "react";
+import { Grid } from "@mui/material";
+import Sidebar from "./Sidebar.jsx";
+import MainContainer from "./MainContainer.jsx";
+import Topbar from "./Topbar.jsx";
 
 const Index = () => {
   return (
     <>
-      <Grid container>
-        <Grid item md={4} lg={4} sx={{ background: "yellow" }}>
-          <Box>Alpha</Box>
+      <Topbar />
+      <Grid spacing={2} container mt={0}>
+        <Grid item md={4} lg={4}>
+          <Sidebar />
         </Grid>
-        <Grid item md={8} lg={8} sx={{ background: "lime" }}>
-          Beta
+        <Grid item md={8} lg={8}>
+          <MainContainer />
         </Grid>
       </Grid>
     </>
