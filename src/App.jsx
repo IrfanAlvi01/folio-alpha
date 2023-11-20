@@ -10,8 +10,6 @@ function App() {
     setIsDarkTheme((prev) => !prev);
   };
 
-  console.log(lightTheme);
-
   return (
     <>
       <button onClick={() => setTheme()}>click</button>

@@ -3,13 +3,15 @@ import "@fontsource/poppins";
 import "@fontsource/raleway";
 import "@fontsource/pacifico";
 
-const BACKGROUND_LIGHT = "#F4F8FB";
+const BACKGROUND_LIGHT = "#F2F5F9";
 const BACKGROUND_DARK = "#000";
 
 const BACKGROUND_BOX_LIGHT = "#FFF";
 const BACKGROUND_BOX_DARK = "#1D1D1D";
 
-const LAYOUT_A_LIGHT = "#0054A4";
+const LAYOUT_A_LIGHT = "#EC1B09";
+
+const GRADIENT_ONE_LIGHT = "#FF9C1A";
 
 const FONT_COLOR_LIGHT = "#7D8EA3";
 
@@ -19,6 +21,7 @@ export const lightTheme = {
     background: {
       default: BACKGROUND_LIGHT,
       bgLayoutA: LAYOUT_A_LIGHT,
+      gradientOne: GRADIENT_ONE_LIGHT,
       paperBox: BACKGROUND_BOX_LIGHT,
       test: "cornsilk",
     },
@@ -59,6 +62,11 @@ export const lightTheme = {
         contained: {},
       },
     },
+    MuiButtonBase: {
+      defaultProps: {
+        disableRipple: true,
+      },
+    },
   },
 };
 
@@ -68,6 +76,7 @@ export const darkTheme = {
     background: {
       default: BACKGROUND_DARK,
       bgLayoutA: LAYOUT_A_LIGHT,
+      gradientOne: GRADIENT_ONE_LIGHT,
       paperBox: BACKGROUND_BOX_DARK,
       test: "tomato",
     },
@@ -81,6 +90,11 @@ export const darkTheme = {
       styleOverrides: {
         root: {},
         contained: {},
+      },
+    },
+    MuiButtonBase: {
+      defaultProps: {
+        disableRipple: true,
       },
     },
   },
