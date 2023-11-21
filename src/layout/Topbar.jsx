@@ -13,31 +13,31 @@ const Topbar = ({ currentTab, setCurrentTab }) => {
 
   return (
     <>
-      <Stack alignItems={"flex-end"}>
+      <Stack alignItems={"flex-end"} mt={"2px"}>
         <Box sx={topbarBoxStyle}>
           <NavButton
-            active={currentTab == 1}
+            active={(currentTab == 1).toString()}
             onClick={() => handleNavButtonClick(1)}
           >
             <Typography zIndex={2}>Click</Typography>
             <GradientWrapper active={currentTab == 1} />
           </NavButton>
           <NavButton
-            active={currentTab == 2}
+            active={(currentTab == 2).toString()}
             onClick={() => handleNavButtonClick(2)}
           >
             <Typography zIndex={2}>Click</Typography>
             <GradientWrapper active={currentTab == 2} />
           </NavButton>
           <NavButton
-            active={currentTab == 3}
+            active={(currentTab == 3).toString()}
             onClick={() => handleNavButtonClick(3)}
           >
             <Typography zIndex={2}>Click</Typography>
             <GradientWrapper active={currentTab == 3} />
           </NavButton>
           <NavButton
-            active={currentTab == 4}
+            active={(currentTab == 4).toString()}
             onClick={() => handleNavButtonClick(4)}
           >
             <Typography zIndex={2}>Click</Typography>

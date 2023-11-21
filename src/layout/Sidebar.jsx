@@ -4,6 +4,8 @@ import {
   sidebarMainBoxStyle,
   sidebarStackStyle,
 } from "../utils/muiComponentStyles";
+import { BadgeStack } from "../components/ComponentExporter";
+import InfoStack from "../components/sidebar/InfoStack";
 
 const Sidebar = () => {
   return (
@@ -21,13 +23,9 @@ const Sidebar = () => {
         Hi
       </Box>
       <Typography mt={16}>Beatrice Wambui</Typography>
+      <BadgeStack />
+      <InfoStack />
       <Box sx={sidebarMainBoxStyle}>
-        <Box>Sidebar</Box>
-        <Box>Sidebar</Box>
-        <Box>Sidebar</Box>
-        <Box>Sidebar</Box>
-        <Box>Sidebar</Box>
-        <Box>Sidebar</Box>
         <Box>Sidebar</Box>
         <Box>Sidebar</Box>
         <Box>Sidebar</Box>

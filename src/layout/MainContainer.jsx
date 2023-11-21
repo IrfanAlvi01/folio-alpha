@@ -1,24 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Slide } from "@mui/material";
+import { HomeComponent } from "../components/ComponentExporter";
 import { mainContainerBoxStyle } from "../utils/muiComponentStyles";
 
 const MainContainer = ({ currentIndex }) => {
+  const [activeIndex, setActiveIndex] = useState(currentIndex);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setActiveIndex(currentIndex);
+    }, 500);
+  }, [currentIndex]);
+
   return (
     <>
-      <Box sx={mainContainerBoxStyle}>
-        <Slide mountOnEnter unmountOnExit in={currentIndex === 1} timeout={300}>
-          <Box sx={{ p: 2, backgroundColor: "lightblue" }}>Box 1</Box>
-        </Slide>
-        <Slide mountOnEnter unmountOnExit in={currentIndex === 2} timeout={300}>
+      <HomeComponent currentIndex={currentIndex} activeIndex={activeIndex} />
+      <Slide
+        mountOnEnter
+        unmountOnExit
+        timeout={500}
+        direction="left"
+        in={currentIndex == 2 && activeIndex === 2}
+      >
+        <Box sx={mainContainerBoxStyle}>
           <Box sx={{ p: 2, backgroundColor: "lightgreen" }}>Box 2</Box>
-        </Slide>
-        <Slide mountOnEnter unmountOnExit in={currentIndex === 3} timeout={300}>
+        </Box>
+      </Slide>
+      <Slide
+        mountOnEnter
+        unmountOnExit
+        timeout={500}
+        direction="left"
+        in={currentIndex == 3 && activeIndex === 3}
+      >
+        <Box sx={mainContainerBoxStyle}>
           <Box sx={{ p: 2, backgroundColor: "lightyellow" }}>Box 3</Box>
-        </Slide>
-        <Slide mountOnEnter unmountOnExit in={currentIndex === 4} timeout={300}>
+        </Box>
+      </Slide>
+      <Slide
+        mountOnEnter
+        unmountOnExit
+        timeout={500}
+        direction="left"
+        in={currentIndex == 4 && activeIndex === 4}
+      >
+        <Box sx={mainContainerBoxStyle}>
           <Box sx={{ p: 2, backgroundColor: "lightpink" }}>Box 4</Box>
-        </Slide>
-      </Box>
+        </Box>
+      </Slide>
     </>
   );
 };
