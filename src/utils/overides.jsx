@@ -1,5 +1,5 @@
 export default function ComponentsOverrides(theme) {
-  return Object.assign(Button(theme));
+  return Object.assign(Button(theme), ButtonBase(theme), MuiDivider(theme));
 }
 
 function MuiDivider(theme) {
@@ -15,7 +15,11 @@ function MuiDivider(theme) {
 }
 function ButtonBase(theme) {
   return {
-    MuiButton: {},
+    MuiButtonBase: {
+      defaultProps: {
+        disableRipple: true,
+      },
+    },
   };
 }
 function Button(theme) {
@@ -27,47 +31,12 @@ function Button(theme) {
             boxShadow: "none",
           },
         },
-        sizeLarge: {
-          height: 48,
+        gradientContained: {
+          background: "linear-gradient(45deg, #f50057, #000000)",
         },
-        // contained
-        containedInherit: {
-          color: theme.palette.grey[800],
-          boxShadow: theme.customShadows.z8,
-          "&:hover": {
-            backgroundColor: theme.palette.grey[400],
-          },
-        },
-        containedPrimary: {
-          boxShadow: theme.customShadows.primary,
-        },
-        containedSecondary: {
-          boxShadow: theme.customShadows.secondary,
-        },
-        containedInfo: {
-          boxShadow: theme.customShadows.info,
-        },
-        containedSuccess: {
-          boxShadow: theme.customShadows.success,
-        },
-        containedWarning: {
-          boxShadow: theme.customShadows.warning,
-        },
-        containedError: {
-          boxShadow: theme.customShadows.error,
-        },
-        // outlined
-        outlinedInherit: {
-          border: `1px solid ${theme.palette.grey[500_32]}`,
-          "&:hover": {
-            backgroundColor: theme.palette.action.hover,
-          },
-        },
-        textInherit: {
-          "&:hover": {
-            backgroundColor: theme.palette.action.hover,
-          },
-        },
+        // sizeLarge: {
+        //   height: 48,
+        // },
       },
     },
   };

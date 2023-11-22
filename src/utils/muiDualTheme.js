@@ -1,5 +1,6 @@
 import React from "react";
 import { createTheme } from "@mui/material";
+import ComponentsOverrides from "./overides";
 
 const theme = createTheme();
 
@@ -64,83 +65,11 @@ const lightTheme = {
       fontColor: FONT_COLOR_LIGHT,
     },
   },
-  typography: {
-    fontFamily: [
-      "Poppins",
-      "Raleway",
-      "Pacifico",
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(","),
-    header: {
-      zIndex: 2,
-      fontSize: "12px",
-      fontWeight: 600,
-      lineHeight: "20px",
-      fontFamily: "Raleway",
-      textTransform: "capitalize",
-    },
-    infoTitle: {
-      fontSize: "14px",
-      fontWeight: 400,
-      lineHeight: "1.1",
-      textAlign: "left",
-      cursor: "pointer",
-      fontFamily: "Raleway",
-      textTransform: "capitalize",
-      color: FONT_SIDEBAR_INFOTITLE_LIGHT,
-    },
-    infoValue: {
-      color: FONT_SIDEBAR_INFOVALUE_LIGHT,
-      fontSize: "14px",
-      fontWeight: 600,
-      textAlign: "left",
-      cursor: "pointer",
-      lineHeight: "1.2",
-      fontFamily: "Raleway",
-      textTransform: "capitalize",
-    },
-    h5: {
-      fontFamily: "Pacifico",
-      fontWeight: 500,
-    },
-    body1: {
-      fontFamily: "Poppins",
-      fontWeight: 400,
-    },
-  },
-  components: {
-    MuiDivider: {
-      styleOverrides: {
-        root: {
-          backgroundColor: "#e9e5e5", // Replace with your desired color
-        },
-      },
-    },
-    MuiButton: {
-      styleOverrides: {
-        root: {},
-        contained: {},
-      },
-    },
-    MuiButtonBase: {
-      defaultProps: {
-        disableRipple: true,
-      },
-    },
-  },
   shadows: ["0px 0px 2px 1px rgba(207,211,215,0.68)", ...theme.shadows],
 };
 
-// lightTheme.components = componentsOverride(lightTheme);
+lightTheme.typography = TypographyOverrides(lightTheme);
+lightTheme.components = ComponentsOverrides(lightTheme);
 
 const darkTheme = {
   palette: {
@@ -168,7 +97,29 @@ const darkTheme = {
       fontColor: FONT_COLOR_LIGHT,
     },
   },
-  typography: {
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {},
+        contained: {},
+      },
+    },
+    MuiButtonBase: {
+      defaultProps: {
+        disableRipple: true,
+      },
+    },
+  },
+  shadows: ["0px 0px 2px 1px rgb(97,95,95)", ...theme.shadows],
+};
+
+darkTheme.typography = TypographyOverrides(darkTheme);
+darkTheme.components = ComponentsOverrides(darkTheme);
+
+export { lightTheme, darkTheme };
+
+function TypographyOverrides(theme) {
+  return Object.assign({
     fontFamily: [
       "Poppins",
       "Raleway",
@@ -195,23 +146,22 @@ const darkTheme = {
     infoTitle: {
       fontSize: "14px",
       fontWeight: 400,
-      textAlign: "left",
       lineHeight: "1.1",
+      textAlign: "left",
       cursor: "pointer",
       fontFamily: "Raleway",
       textTransform: "capitalize",
-      color: FONT_SIDEBAR_INFOVALUE_DARK,
+      color: theme.palette.font.sidebarInfoTitle,
     },
     infoValue: {
-      mr: 5,
       fontSize: "14px",
-      fontWeight: 400,
-      lineHeight: "1.2",
-      cursor: "pointer",
+      fontWeight: 600,
       textAlign: "left",
+      cursor: "pointer",
+      lineHeight: "1.2",
       fontFamily: "Raleway",
       textTransform: "capitalize",
-      color: FONT_SIDEBAR_INFOTITLE_DARK,
+      color: theme.palette.font.sidebarInfoValue,
     },
     h5: {
       fontFamily: "Pacifico",
@@ -221,26 +171,8 @@ const darkTheme = {
       fontFamily: "Poppins",
       fontWeight: 400,
     },
-  },
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          background: `linear-gradient(45deg, ${theme.palette.background.layoutA}, ${theme.palette.background.gradientOne})`,
-        },
-        contained: {},
-      },
-    },
-    MuiButtonBase: {
-      defaultProps: {
-        disableRipple: true,
-      },
-    },
-  },
-  shadows: ["0px 0px 2px 1px rgb(97,95,95)", ...theme.shadows],
-};
-
-export { lightTheme, darkTheme };
+  });
+}
 
 const ThemeContext = React.createContext({
   isDarkTheme: false,

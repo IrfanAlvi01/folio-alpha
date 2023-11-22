@@ -24,7 +24,7 @@ const InfoStack = () => {
           <Divider />
         </>
       ))}
-      <Button>click</Button>
+      <Button variant="gradientContained">click</Button>
     </Stack>
   );
 };
