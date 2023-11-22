@@ -12,13 +12,17 @@ export const PrimaryBackground = styled(Box)(({ color, theme }) => ({
 export const NavButton = styled(Button)(({ theme, active }) => ({
   width: 80,
   height: 80,
-  borderRadius: "20px",
+  display: "flex",
   position: "relative",
-  background: "#E1E8EF",
+  borderRadius: "20px",
+  alignItems: "center",
+  backgroundColor: theme.palette.background.topbarIcon,
+  flexDirection: "column",
+  justifyContent: "center",
   color: active == "true" ? "white" : "black",
   transition: "background 0.5s ease-in-out",
   "&:hover": {
-    background: "#E1E8EF",
+    backgroundColor: theme.palette.background.topbarIcon,
   },
 }));
 
@@ -52,6 +56,16 @@ export const sidebarStackStyle = {
     borderRadius: "20px",
     position: "relative",
     backgroundColor: (theme) => theme.palette.background.paperBox,
+  },
+};
+
+export const sidebarInfoStackStyle = {
+  "&.MuiStack-root": {
+    p: 4,
+    mt: 2,
+    width: "100%",
+    borderRadius: "20px",
+    backgroundColor: "background.sidebarInfoBox",
   },
 };
 

@@ -11,7 +11,7 @@ const stack = [GitHubIcon, LeetCodeIcon, LinkedInIcon, GitHubIcon];
 
 const BadgeStack = () => {
   return (
-    <Stack gap={1} direction={"row"}>
+    <Stack gap={2} direction={"row"}>
       {stack.map((icon, idx) => (
         <BadgeBox key={idx}>
           <Box sx={{ height: 25, width: 25 }} component={icon} />
