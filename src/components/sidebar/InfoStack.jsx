@@ -1,7 +1,12 @@
 import React from "react";
 import { Box, Button, Divider, Stack, Typography } from "@mui/material";
 import { sidebarInfoStackStyle } from "../../utils/muiComponentStyles";
-import { EmailIcon, LocationIcon, PhoneIcon } from "../../assets/AssetExporter";
+import {
+  DownloadIcon,
+  EmailIcon,
+  LocationIcon,
+  PhoneIcon,
+} from "../../assets/AssetExporter";
 
 const InfoStack = () => {
   return (
@@ -15,6 +20,7 @@ const InfoStack = () => {
             direction={"row"}
             alignItems={"center"}
           >
+            {console.log(idx)}
             <Box component={item.icon} sx={{ minWidth: 20 }} />
             <Stack ml={2}>
               <Typography variant="infoTitle">{item.title}:</Typography>
@@ -24,7 +30,10 @@ const InfoStack = () => {
           <Divider />
         </>
       ))}
-      <Button variant="gradientContained">click</Button>
+      <Button sx={{ mt: 4, mx: "auto" }} variant="gradientContained">
+        <Box component={DownloadIcon} sx={{ width: 26, mr: 1 }} /> Download
+        Something
+      </Button>
     </Stack>
   );
 };

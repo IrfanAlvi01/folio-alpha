@@ -1,11 +1,11 @@
 import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import {
-  sidebarMainBoxStyle,
   sidebarStackStyle,
+  GradientTypography,
 } from "../utils/muiComponentStyles";
-import { BadgeStack } from "../components/ComponentExporter";
 import InfoStack from "../components/sidebar/InfoStack";
+import { BadgeStack } from "../components/ComponentExporter";
 
 const Sidebar = () => {
   return (
@@ -17,19 +17,23 @@ const Sidebar = () => {
           borderRadius: "20px",
           position: "absolute",
           background: "cornsilk",
-          transform: "translateY(-50%)",
+          transform: "translateY(-60%)",
         }}
       >
         Hi
       </Box>
-      <Typography mt={16}>Beatrice Wambui</Typography>
+      <Stack gap={0.5} mt={14} direction={"row"}>
+        <GradientTypography component="span">
+          <Typography variant="name"> Beatrice</Typography>
+        </GradientTypography>
+        <Typography variant="name"> Wambui</Typography>
+      </Stack>
+
       <BadgeStack />
       <InfoStack />
-      <Box sx={sidebarMainBoxStyle}>
+      {/* <Box sx={sidebarMainBoxStyle}>
         <Box>Sidebar</Box>
-        <Box>Sidebar</Box>
-        <Box>Sidebar</Box>
-      </Box>
+      </Box> */}
     </Stack>
   );
 };

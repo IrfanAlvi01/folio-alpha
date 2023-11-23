@@ -135,6 +135,12 @@ function TypographyOverrides(theme) {
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(","),
+    name: {
+      fontSize: "22px",
+      // fontWeight: 600,
+      fontFamily: "Pacifico",
+      textTransform: "capitalize",
+    },
     header: {
       zIndex: 2,
       fontSize: "12px",
@@ -142,6 +148,14 @@ function TypographyOverrides(theme) {
       lineHeight: "20px",
       fontFamily: "Raleway",
       textTransform: "capitalize",
+    },
+    introduction: {
+      color: "#000",
+      fontFamily: "Raleway",
+      fontSize: "16px",
+      fontStyle: "normal",
+      fontWeight: 500,
+      lineHeight: "30px" /* 187.5% */,
     },
     infoTitle: {
       fontSize: "14px",
@@ -167,10 +181,10 @@ function TypographyOverrides(theme) {
       fontFamily: "Pacifico",
       fontWeight: 500,
     },
-    body1: {
-      fontFamily: "Poppins",
-      fontWeight: 400,
-    },
+    // body1: {
+    //   fontFamily: "Poppins",
+    //   fontWeight: 400,
+    // },
   });
 }
 

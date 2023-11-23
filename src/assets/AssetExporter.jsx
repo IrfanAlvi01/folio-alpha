@@ -16,3 +16,4 @@ export { default as ContactIconActive } from "./images/header_icons/contact_acti
 export { default as PhoneIcon } from "./images/social_icons/phone.svg?react";
 export { default as LocationIcon } from "./images/social_icons/location.svg?react";
 export { default as EmailIcon } from "./images/social_icons/email.svg?react";
+export { default as DownloadIcon } from "./images/social_icons/download.svg?react";

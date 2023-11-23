@@ -1,4 +1,4 @@
-import { Box, Button, SvgIcon, styled } from "@mui/material";
+import { Box, Button, SvgIcon, Typography, styled } from "@mui/material";
 import React from "react";
 
 export const PrimaryBackground = styled(Box)(({ color, theme }) => ({
@@ -9,6 +9,37 @@ export const PrimaryBackground = styled(Box)(({ color, theme }) => ({
     easing: "cubic-bezier(0.4, 0, 0.2, 1)",
   }),
 }));
+
+export const GradientTypography = styled(Box)(({ theme }) => ({
+  background: `linear-gradient(300deg, ${theme.palette.background.layoutA} 7.92%, ${theme.palette.background.gradientOne} 108.2%)`,
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+}));
+
+export const MainHeader = styled(Typography)(({ theme, leftDir }) => ({
+  fontSize: "2.5rem",
+  fontStyle: "normal",
+  textTransform: "uppercase",
+  // background: "pink",
+  fontWeight: "500",
+  lineHeight: "40px" /* 100% */,
+  letterSpacing: "1px",
+  fontFamily: "Poppins",
+
+  position: "relative",
+
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    top: "50%",
+    left: leftDir,
+    width: "252px",
+    height: "2px",
+    transform: "translate(-50%, -50%)",
+    background: `linear-gradient(300deg, ${theme.palette.background.layoutA} 7.92%, ${theme.palette.background.gradientOne} 108.2%)`,
+  },
+}));
+
 export const NavButton = styled(Button)(({ theme, active }) => ({
   width: 80,
   height: 80,
@@ -62,7 +93,7 @@ export const sidebarStackStyle = {
 export const sidebarInfoStackStyle = {
   "&.MuiStack-root": {
     p: 4,
-    mt: 2,
+    mt: 4,
     width: "100%",
     borderRadius: "20px",
     backgroundColor: "background.sidebarInfoBox",
@@ -90,18 +121,20 @@ export const topbarBoxStyle = {
     borderColor: "border.topbar",
     justifyContent: "space-evenly",
     backgroundColor: "background.topbar",
-    boxShadow: (theme) => theme.shadows[0],
+    // boxShadow: (theme) => theme.shadows[0],
   },
 };
 
 export const mainContainerBoxStyle = {
   "&.MuiBox-root": {
-    padding: 2,
-    display: "flex",
+    padding: 4,
+    textAlign: "left",
+    // display: "flex",
+    // flexShirk: 0,
     borderRadius: "20px",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
+    // flexDirection: "column",
+    // justifyContent: "center",
+    // alignItems: "center",
     backgroundColor: (theme) => theme.palette.background.paperBox,
   },
 };
