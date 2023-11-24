@@ -10,6 +10,10 @@ const BACKGROUND_DARK = "#000000";
 const BACKGROUND_BOX_LIGHT = "#FFF";
 const BACKGROUND_BOX_DARK = "#1D1D1D";
 
+const LAYOUT_A_LIGHT = "#EC1B09";
+
+const GRADIENT_ONE_LIGHT = "#FF9C1A";
+
 //Topbar
 const BACKGROUND_TOPBAR_LIGHT = "#F2F7FC";
 const BACKGROUND_TOPBAR_DARK = "#2e2e2e";
@@ -33,9 +37,15 @@ const FONT_SIDEBAR_INFOTITLE_DARK = "#7e7a7a";
 const FONT_SIDEBAR_INFOVALUE_LIGHT = "#000";
 const FONT_SIDEBAR_INFOVALUE_DARK = "#999393";
 
-const LAYOUT_A_LIGHT = "#EC1B09";
+//Main
+const BACKGROUND_COLOREDBOX1_LIGHT = "#FFEBD1";
+const BACKGROUND_COLOREDBOX1_DARK = "#2c2b2a";
 
-const GRADIENT_ONE_LIGHT = "#FF9C1A";
+const BACKGROUND_COLOREDBOX2_LIGHT = "#FFE3BF";
+const BACKGROUND_COLOREDBOX2_DARK = "#2c2b2a";
+
+const FONT_INFO_LIGHT = "#000";
+const FONT_INFO_DARK = "#999999";
 
 const FONT_COLOR_LIGHT = "#7D8EA3";
 
@@ -49,11 +59,14 @@ const lightTheme = {
       topbarIcon: BACKGROUND_TOPBAR_ICON_LIGHT,
       sidebarSvgBox: BACKGROUND_SIDEBAR_SVGBOX_LIGHT,
       sidebarInfoBox: BACKGROUND_SIDEBAR_INFOBOX_LIGHT,
+      mainColoredBox1: BACKGROUND_COLOREDBOX1_LIGHT,
+      mainColoredBox2: BACKGROUND_COLOREDBOX2_LIGHT,
       gradientOne: GRADIENT_ONE_LIGHT,
       paperBox: BACKGROUND_BOX_LIGHT,
       test: "cornsilk",
     },
     font: {
+      mainInfo: FONT_INFO_LIGHT,
       sidebarInfoTitle: FONT_SIDEBAR_INFOTITLE_LIGHT,
       sidebarInfoValue: FONT_SIDEBAR_INFOVALUE_LIGHT,
     },
@@ -81,11 +94,14 @@ const darkTheme = {
       topbarIcon: BACKGROUND_TOPBAR_ICON_DARK,
       sidebarSvgBox: BACKGROUND_SIDEBAR_SVGBOX_DARK,
       sidebarInfoBox: BACKGROUND_SIDEBAR_INFOBOX_DARK,
+      mainColoredBox1: BACKGROUND_COLOREDBOX1_DARK,
+      mainColoredBox2: BACKGROUND_COLOREDBOX2_DARK,
       gradientOne: GRADIENT_ONE_LIGHT,
       paperBox: BACKGROUND_BOX_DARK,
       test: "tomato",
     },
     font: {
+      mainInfo: FONT_INFO_DARK,
       sidebarInfoTitle: FONT_SIDEBAR_INFOTITLE_DARK,
       sidebarInfoValue: FONT_SIDEBAR_INFOVALUE_DARK,
     },
@@ -137,45 +153,8 @@ function TypographyOverrides(theme) {
     ].join(","),
     name: {
       fontSize: "22px",
-      // fontWeight: 600,
       fontFamily: "Pacifico",
       textTransform: "capitalize",
-    },
-    header: {
-      zIndex: 2,
-      fontSize: "12px",
-      fontWeight: 600,
-      lineHeight: "20px",
-      fontFamily: "Raleway",
-      textTransform: "capitalize",
-    },
-    introduction: {
-      color: "#000",
-      fontFamily: "Raleway",
-      fontSize: "16px",
-      fontStyle: "normal",
-      fontWeight: 500,
-      lineHeight: "30px" /* 187.5% */,
-    },
-    infoTitle: {
-      fontSize: "14px",
-      fontWeight: 400,
-      lineHeight: "1.1",
-      textAlign: "left",
-      cursor: "pointer",
-      fontFamily: "Raleway",
-      textTransform: "capitalize",
-      color: theme.palette.font.sidebarInfoTitle,
-    },
-    infoValue: {
-      fontSize: "14px",
-      fontWeight: 600,
-      textAlign: "left",
-      cursor: "pointer",
-      lineHeight: "1.2",
-      fontFamily: "Raleway",
-      textTransform: "capitalize",
-      color: theme.palette.font.sidebarInfoValue,
     },
     h5: {
       fontFamily: "Pacifico",

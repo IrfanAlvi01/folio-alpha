@@ -1,6 +1,9 @@
 import React from "react";
 import { Box, Button, Divider, Stack, Typography } from "@mui/material";
-import { sidebarInfoStackStyle } from "../../utils/muiComponentStyles";
+import {
+  globleTypographies,
+  sidebarInfoStackStyle,
+} from "../../utils/muiComponentStyles";
 import {
   DownloadIcon,
   EmailIcon,
@@ -22,9 +25,13 @@ const InfoStack = () => {
           >
             {console.log(idx)}
             <Box component={item.icon} sx={{ minWidth: 20 }} />
-            <Stack ml={2}>
-              <Typography variant="infoTitle">{item.title}:</Typography>
-              <Typography variant="infoValue">{item.value}</Typography>
+            <Stack ml={2} sx={{ overflowX: "hidden" }}>
+              <Typography sx={globleTypographies} variant="infoTitle">
+                {item.title}:
+              </Typography>
+              <Typography sx={globleTypographies} variant="infoValue">
+                {item.value}
+              </Typography>
             </Stack>
           </Stack>
           <Divider />

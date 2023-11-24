@@ -1,4 +1,4 @@
-import { Box, Button, SvgIcon, Typography, styled } from "@mui/material";
+import { Box, Button, Typography, styled } from "@mui/material";
 import React from "react";
 
 export const PrimaryBackground = styled(Box)(({ color, theme }) => ({
@@ -80,6 +80,79 @@ export const BadgeBox = styled(Box)(({ theme }) => ({
   justifyContent: "center",
 }));
 
+export const globleTypographies = {
+  "&.MuiTypography-infoTitle": {
+    fontSize: "14px",
+    fontWeight: 400,
+    lineHeight: "1.1",
+    textAlign: "left",
+    cursor: "pointer",
+    fontFamily: "Raleway",
+    textTransform: "capitalize",
+    color: "font.sidebarInfoTitle",
+  },
+  "&.MuiTypography-infoValue": {
+    fontSize: "14px",
+    fontWeight: 600,
+    textAlign: "left",
+    cursor: "pointer",
+    lineHeight: "1.2",
+    fontFamily: "Raleway",
+    textTransform: "capitalize",
+    color: "font.sidebarInfoValue",
+  },
+  "&.MuiTypography-whatIDo": {
+    my: 2,
+    color: "#000",
+    fontFamily: "Poppins",
+    fontSize: "2rem",
+    fontStyle: "normal",
+    fontWeight: 500,
+    lineHeight: "40px",
+    letterSpacing: "0.8px",
+  },
+  "&.MuiTypography-header": {
+    zIndex: 2,
+    fontSize: "12px",
+    fontWeight: 600,
+    lineHeight: "20px",
+    fontFamily: "Raleway",
+    textTransform: "capitalize",
+  },
+  "&.MuiTypography-introduction": {
+    color: "font.mainInfo",
+    fontFamily: "Raleway",
+    fontSize: "16px",
+    fontStyle: "normal",
+    fontWeight: 500,
+    lineHeight: "30px" /* 187.5% */,
+  },
+  "&.MuiTypography-coloredBoxHeading": {
+    color: "font.mainInfo",
+    fontFamily: "Poppins",
+    fontSize: "24px",
+    fontStyle: "normal",
+    fontWeight: 600,
+    lineHeight: "20px" /* 187.5% */,
+  },
+  "&.MuiTypography-coloredBoxDetail": {
+    color: "font.mainInfo",
+    fontFamily: "Raleway",
+    fontSize: "14px",
+    fontStyle: "normal",
+    fontWeight: 400,
+    lineHeight: "20px" /* 187.5% */,
+  },
+  "&.MuiTypography-education": {
+    color: "font.mainInfo",
+    fontFamily: "Poppins",
+    fontSize: "27.737px",
+    fontStyle: "normal",
+    fontWeight: 500,
+    lineHeight: "46px",
+  },
+};
+
 export const sidebarStackStyle = {
   "&.MuiStack-root": {
     p: 4,
@@ -129,12 +202,25 @@ export const mainContainerBoxStyle = {
   "&.MuiBox-root": {
     padding: 4,
     textAlign: "left",
-    // display: "flex",
-    // flexShirk: 0,
     borderRadius: "20px",
-    // flexDirection: "column",
-    // justifyContent: "center",
-    // alignItems: "center",
     backgroundColor: (theme) => theme.palette.background.paperBox,
+  },
+};
+
+export const coloredBoxStyle1 = {
+  "&.MuiBox-root": {
+    px: 3,
+    py: 2,
+    borderRadius: "20px",
+    backgroundColor: "background.mainColoredBox1",
+  },
+};
+
+export const coloredBoxStyle2 = {
+  "&.MuiBox-root": {
+    px: 3,
+    py: 2,
+    borderRadius: "20px",
+    backgroundColor: "background.mainColoredBox2",
   },
 };

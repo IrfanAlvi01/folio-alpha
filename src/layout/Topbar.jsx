@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import {
   GradientWrapper,
   NavButton,
+  globleTypographies,
   topbarBoxStyle,
 } from "../utils/muiComponentStyles";
 import ThemeContext from "../utils/muiDualTheme";
@@ -42,7 +43,9 @@ const Topbar = ({ currentTab, setCurrentTab }) => {
                   currentTab == item?.id ? item?.activeIcon : item?.normalIcon
                 }
               />
-              <Typography variant="header">{item?.name}</Typography>
+              <Typography sx={globleTypographies} variant="header">
+                {item?.name}
+              </Typography>
               <GradientWrapper active={currentTab == item?.id} />
             </NavButton>
           ))}

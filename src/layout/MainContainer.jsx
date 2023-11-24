@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Box, Slide } from "@mui/material";
-import { HomeComponent } from "../components/ComponentExporter";
+import {
+  HomeComponent,
+  ResumeComponent,
+} from "../components/ComponentExporter";
 import { mainContainerBoxStyle } from "../utils/muiComponentStyles";
 
 const MainContainer = ({ currentIndex }) => {
@@ -15,17 +18,7 @@ const MainContainer = ({ currentIndex }) => {
   return (
     <>
       <HomeComponent currentIndex={currentIndex} activeIndex={activeIndex} />
-      <Slide
-        mountOnEnter
-        unmountOnExit
-        timeout={500}
-        direction="left"
-        in={currentIndex == 2 && activeIndex === 2}
-      >
-        <Box sx={mainContainerBoxStyle}>
-          <Box sx={{ p: 2, backgroundColor: "lightgreen" }}>Box 2</Box>
-        </Box>
-      </Slide>
+      <ResumeComponent currentIndex={currentIndex} activeIndex={activeIndex} />
       <Slide
         mountOnEnter
         unmountOnExit
