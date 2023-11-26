@@ -111,6 +111,16 @@ export const globleTypographies = {
     lineHeight: "40px",
     letterSpacing: "0.8px",
   },
+  "&.MuiTypography-skillsHeading": {
+    my: 2,
+    color: "#000",
+    fontFamily: "Poppins",
+    fontSize: "2rem",
+    fontStyle: "normal",
+    fontWeight: 500,
+    lineHeight: "40px",
+    letterSpacing: "0.8px",
+  },
   "&.MuiTypography-header": {
     zIndex: 2,
     fontSize: "12px",

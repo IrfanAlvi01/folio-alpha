@@ -9,45 +9,17 @@ import {
 } from "../../../utils/muiComponentStyles";
 import { CodeIcon } from "../../../assets/AssetExporter";
 
-const whatIDoList = [
-  {
-    icon: CodeIcon,
-    heading: "Mentorship",
-    text: `As a developer, I find myself most 
-    captivated by the power and flexibility of 
-    NEXT.js. I'm always eager to dive into new
-    projects that leverage NEXT.js and 
-    discover innovative ways to create fast, 
-    scalable, and user-friendly applications.`,
-  },
-  // {
-  //   icon: CodeIcon,
-  //   heading: "Mentorship",
-  //   text: `With a focus on user-centric design and
-  //   cutting-edge technologies, I thrive on
-  //   building intuitive and efficient apps
-  //   that make a positive impact on people's
-  //   lives. Let's turn ideas into reality and
-  //   shape the future together.`,
-  // },
-  // {
-  //   icon: CodeIcon,
-  //   heading: "Mentorship",
-  //   text: `Crafting visually appealing and intuitive user
-  //   interfaces that offer a delightful user
-  //   experience is something I'm truly fanatic
-  //   about.`,
-  // },
-  // {
-  //   icon: CodeIcon,
-  //   heading: "Mentorship",
-  //   text: `I have also found great joy in sharing my
-  //   knowledge with others. Being a technical
-  //   mentor allows me to give back to the
-  //   community that has supported me
-  //   throughout my career. `,
-  // },
-];
+const skillsets = {
+  workSkills: [
+    "HTML5",
+    "CSS 3",
+    "JavaScript",
+    "ReactJS",
+    "Java",
+    "MUI",
+    "Tailwind CSS",
+  ],
+};
 
 const Index = ({ currentIndex, activeIndex }) => {
   return (
@@ -91,7 +63,7 @@ const Index = ({ currentIndex, activeIndex }) => {
               <Box component={CodeIcon} sx={{ minWidth: 20, mr: 1 }} />
               <Typography
                 component="span"
-                sx={{...globleTypographies, fontWeight: 700}}
+                sx={{ ...globleTypographies, fontWeight: 700 }}
                 variant="education"
               >
                 text
@@ -110,38 +82,65 @@ const Index = ({ currentIndex, activeIndex }) => {
             </Box>
           </Grid>
         </Grid>
-        <Typography
-          my={2}
-          component="p"
-          sx={globleTypographies}
-          variant="whatIDo"
-        >
-          What I Do!
-        </Typography>
-        <Grid spacing={2} container>
-          {whatIDoList?.map((item, idx) => (
-            <Grid display={"flex"} item key={idx} sm={6}>
-              <Box sx={coloredBoxStyle1}>
-                <Box mb={1} display={"flex"} alignItems={"center"}>
-                  <Box component={CodeIcon} sx={{ minWidth: 20, mr: 1 }} />
-                  <Typography
-                    component="span"
-                    sx={globleTypographies}
-                    variant="coloredBoxHeading"
-                  >
-                    {item.heading}
-                  </Typography>
-                </Box>
-                <Typography
-                  component="span"
-                  sx={globleTypographies}
-                  variant="coloredBoxDetail"
+        <Grid mt={4} spacing={2} container>
+          <Grid item sm={6}>
+            <Typography
+              my={2}
+              component="p"
+              sx={globleTypographies}
+              variant="skillsHeading"
+            >
+              Work Skills
+            </Typography>
+            <Box display={"flex"} flexWrap={"wrap"} gap={2}>
+              {skillsets?.workSkills?.map((skill, idx) => (
+                <Box
+                  key={idx}
+                  sx={{
+                    margin: "2px",
+                    color: "#000",
+                    fontSize: "12px",
+                    padding: "10px 12px",
+                    borderRadius: "10px",
+                    display: "inline-block",
+                    textTransform: "capitalize",
+                    backgroundColor: "background.mainChipBox",
+                  }}
                 >
-                  {item.text}
-                </Typography>
-              </Box>
-            </Grid>
-          ))}
+                  <Typography noWrap>{skill}</Typography>
+                </Box>
+              ))}
+            </Box>
+          </Grid>
+          <Grid item sm={6}>
+            <Typography
+              my={2}
+              component="p"
+              sx={globleTypographies}
+              variant="skillsHeading"
+            >
+              Soft Skills
+            </Typography>
+            <Box display={"flex"} flexWrap={"wrap"} gap={2}>
+              {skillsets?.workSkills?.map((skill, idx) => (
+                <Box
+                  key={idx}
+                  sx={{
+                    margin: "2px",
+                    color: "#000",
+                    fontSize: "12px",
+                    padding: "10px 12px",
+                    borderRadius: "10px",
+                    display: "inline-block",
+                    textTransform: "capitalize",
+                    backgroundColor: "background.mainChipBox",
+                  }}
+                >
+                  <Typography noWrap>{skill}</Typography>
+                </Box>
+              ))}
+            </Box>
+          </Grid>
         </Grid>
       </Box>
     </Slide>
