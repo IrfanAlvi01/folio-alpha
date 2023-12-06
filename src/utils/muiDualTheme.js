@@ -44,6 +44,9 @@ const BACKGROUND_COLOREDBOX1_DARK = "#2c2b2a";
 const BACKGROUND_COLOREDBOX2_LIGHT = "#FFE3BF";
 const BACKGROUND_COLOREDBOX2_DARK = "#2c2b2a";
 
+const BACKGROUND_CHIPS_LIGHT = "#E1E8EF";
+const BACKGROUND_CHIPS_DARK = "#2c2b2a";
+
 const FONT_INFO_LIGHT = "#000";
 const FONT_INFO_DARK = "#999999";
 
@@ -61,6 +64,7 @@ const lightTheme = {
       sidebarInfoBox: BACKGROUND_SIDEBAR_INFOBOX_LIGHT,
       mainColoredBox1: BACKGROUND_COLOREDBOX1_LIGHT,
       mainColoredBox2: BACKGROUND_COLOREDBOX2_LIGHT,
+      mainChipBox: BACKGROUND_CHIPS_LIGHT,
       gradientOne: GRADIENT_ONE_LIGHT,
       paperBox: BACKGROUND_BOX_LIGHT,
       test: "cornsilk",
@@ -96,6 +100,7 @@ const darkTheme = {
       sidebarInfoBox: BACKGROUND_SIDEBAR_INFOBOX_DARK,
       mainColoredBox1: BACKGROUND_COLOREDBOX1_DARK,
       mainColoredBox2: BACKGROUND_COLOREDBOX2_DARK,
+      mainChipBox: BACKGROUND_CHIPS_DARK,
       gradientOne: GRADIENT_ONE_LIGHT,
       paperBox: BACKGROUND_BOX_DARK,
       test: "tomato",
