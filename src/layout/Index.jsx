@@ -12,10 +12,10 @@ const Index = () => {
       <Container disableGutters sx={{ overflow: "hidden" }}>
         <Topbar currentTab={currentTab} setCurrentTab={setCurrentTab} />
         <Grid spacing={2} container mt={0}>
-          <Grid item sm={4} md={4} lg={4}>
+          <Grid item xs={12} sm={12} md={4} lg={4}>
             <Sidebar />
           </Grid>
-          <Grid item sm={8} md={8} lg={8}>
+          <Grid item xs={12} sm={12} md={8} lg={8}>
             <MainContainer currentIndex={currentTab} />
           </Grid>
         </Grid>

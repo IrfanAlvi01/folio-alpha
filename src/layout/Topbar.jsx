@@ -29,7 +29,11 @@ const Topbar = ({ currentTab, setCurrentTab }) => {
 
   return (
     <>
-      <Stack alignItems={"flex-end"} mt={"2px"}>
+      <Stack
+        display={{ xs: "none", sm: "none", md: "flex" }}
+        alignItems={"flex-end"}
+        mt={"2px"}
+      >
         <Box sx={topbarBoxStyle}>
           {headerList?.map((item, idx) => (
             <NavButton

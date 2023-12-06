@@ -23,3 +23,7 @@ export { default as LeetCodeIcon } from "./images/social_icons/leetcode.svg?reac
 
 //Home Icon
 export { default as CodeIcon } from "./images/home/code.svg?react";
+
+//Resume Icon
+export { default as EduIcon } from "./images/resume/education.svg?react";
+export { default as ExpIcon } from "./images/resume/exp.svg?react";

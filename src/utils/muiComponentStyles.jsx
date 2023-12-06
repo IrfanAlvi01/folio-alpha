@@ -151,6 +151,38 @@ export const globleTypographies = {
     fontWeight: 500,
     lineHeight: "46px",
   },
+  "&.MuiTypography-workSkillHeading": {
+    color: "font.mainInfo",
+    fontFamily: "Poppins",
+    fontSize: "27px",
+    fontStyle: "normal",
+    fontWeight: 500,
+    lineHeight: "20px" /* 187.5% */,
+  },
+  "&.MuiTypography-education1": {
+    color: "font.mainInfo",
+    fontFamily: "Raleway",
+    fontSize: "14px",
+    fontStyle: "normal",
+    fontWeight: 400,
+    lineHeight: "20px",
+  },
+  "&.MuiTypography-education2": {
+    color: "font.mainInfo",
+    fontFamily: "Raleway",
+    fontSize: "14px",
+    fontStyle: "normal",
+    fontWeight: 600,
+    lineHeight: "20px",
+  },
+  "&.MuiTypography-education3": {
+    color: "font.mainInfo",
+    fontFamily: "Raleway",
+    fontSize: "14px",
+    fontStyle: "normal",
+    fontWeight: 500,
+    lineHeight: "20px",
+  },
 };
 
 export const sidebarStackStyle = {
@@ -222,5 +254,13 @@ export const coloredBoxStyle2 = {
     py: 2,
     borderRadius: "20px",
     backgroundColor: "background.mainColoredBox2",
+  },
+};
+
+export const coloredChipBox = {
+  "&.MuiBox-root": {
+    p: "4px 8px",
+    borderRadius: 2,
+    backgroundColor: "background.topbarIcon",
   },
 };
