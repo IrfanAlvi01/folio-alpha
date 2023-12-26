@@ -274,3 +274,39 @@ export const coloredChipBox = {
     backgroundColor: "background.topbarIcon",
   },
 };
+
+export const textfieldStyle = {
+  width: "100%",
+  input: {
+    color: "primary.fontColor",
+    // background: "#FFFFFF",
+    fontFamily: "Poppins",
+  },
+  label: {
+    color: "primary.fontColor",
+    // background: "#FFFFFF",
+    fontFamily: "Poppins",
+  },
+  // "& .MuiInput-underline:after": {
+  //   borderBottomColor: "green",
+  // },
+  "& .MuiOutlinedInput-root": {
+    marginBottom: "10px",
+    "& fieldset": {
+      fontFamily: "Poppins",
+      borderColor: "#B5B5B5",
+      borderRadius: 3,
+    },
+    "& label": {
+      // fontFamily: "Poppins",
+      // borderColor: "#EDEDED",
+      color: "red",
+    },
+    "&:hover fieldset": {
+      borderColor: "#7D8EA3",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "#7D8EA3",
+    },
+  },
+};
