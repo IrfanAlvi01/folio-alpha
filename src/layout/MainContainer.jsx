@@ -8,7 +8,7 @@ import {
 } from "../components/ComponentExporter";
 import { mainContainerBoxStyle } from "../utils/muiComponentStyles";
 
-const MainContainer = ({ currentIndex }) => {
+const MainContainer = ({ currentIndex , isSmall}) => {
   const [activeIndex, setActiveIndex] = useState(currentIndex);
 
   useEffect(() => {
@@ -19,10 +19,10 @@ const MainContainer = ({ currentIndex }) => {
 
   return (
     <>
-      <HomeComponent currentIndex={currentIndex} activeIndex={activeIndex} />
-      <ResumeComponent currentIndex={currentIndex} activeIndex={activeIndex} />
-      <WorkComponent currentIndex={currentIndex} activeIndex={activeIndex} />
-      <ContactComponent currentIndex={currentIndex} activeIndex={activeIndex} />
+      <HomeComponent currentIndex={currentIndex} activeIndex={activeIndex} isSmall={isSmall}/>
+      <ResumeComponent currentIndex={currentIndex} activeIndex={activeIndex} isSmall={isSmall} />
+      <WorkComponent currentIndex={currentIndex} activeIndex={activeIndex} isSmall={isSmall} />
+      <ContactComponent currentIndex={currentIndex} activeIndex={activeIndex} isSmall={isSmall} />
     </>
   );
 };

@@ -5,16 +5,30 @@ import {
   GitHubIcon,
   LeetCodeIcon,
   LinkedInIcon,
+  StackOverFlow,
 } from "../../assets/AssetExporter";
 
-const stack = [GitHubIcon, LeetCodeIcon, LinkedInIcon, GitHubIcon];
+const stackData = [
+  { icon: GitHubIcon, link: "https://github.com/IrfanAlvi01/" },
+  { icon: LeetCodeIcon, link: " https://leetcode.com/irfan-alvi/" },
+  { icon: LinkedInIcon, link: "https://www.linkedin.com/in/irfan-alvi/" },
+  { icon: StackOverFlow, link: "https://stackoverflow.com/users/22035858/irfan-alvi/" },
+];
+
+const handleClick = (link) => {
+  window.open(link);
+};
 
 const BadgeStack = () => {
   return (
     <Stack gap={2} mt={3} direction={"row"}>
-      {stack.map((icon, idx) => (
-        <BadgeBox key={idx}>
-          <Box sx={{ height: 25, width: 25 }} component={icon} />
+      {stackData.map((item, idx) => (
+        <BadgeBox
+          key={idx}
+          onClick={() => handleClick(item.link)}
+          sx={{ cursor: "pointer" }}
+        >
+          <Box sx={{ height: 25, width: 25 }} component={item.icon} />
         </BadgeBox>
       ))}
     </Stack>

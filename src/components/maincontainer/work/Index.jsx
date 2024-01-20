@@ -40,22 +40,22 @@ const projectList = [
   },
 ];
 
-const Index = ({ currentIndex, activeIndex }) => {
+const Index = ({ currentIndex, activeIndex, isSmall }) => {
   return (
     <Slide
       mountOnEnter
       timeout={500}
       unmountOnExit
       direction="left"
-      in={currentIndex == 3 && activeIndex === 3}
+      in={isSmall || (currentIndex == 3 && activeIndex === 3)}
     >
       <Box sx={mainContainerBoxStyle}>
-        <MainHeader leftDir={"220%"} variant="custom">
+        <MainHeader leftdir={isSmall ? "295%" : "225%"} variant="custom">
           Work
         </MainHeader>
         <Grid spacing={4} mt={2} container>
           {projectList.map((item, idx) => (
-            <Grid item xs={12} sm={12} md={6}>
+            <Grid item xs={12} sm={12} md={6} key={idx}>
               {/* <Box my={2} display={"flex"} alignItems={"center"}>
               <Box component={EduIcon} sx={{ minWidth: 20, mr: 1 }} />
               <Typography
@@ -66,7 +66,7 @@ const Index = ({ currentIndex, activeIndex }) => {
                 Text
               </Typography>
             </Box> */}
-              <Box key={idx} sx={coloredBoxStyle1}>
+              <Box  sx={coloredBoxStyle1}>
                 <Box
                   component="img"
                   sx={{ width: "-webkit-fill-available", borderRadius: "20px" }}

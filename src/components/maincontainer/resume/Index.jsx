@@ -4,8 +4,9 @@ import {
   MainHeader,
   coloredBoxStyle1,
   coloredBoxStyle2,
-  coloredChipBox,
+  // coloredChipBox,
   globleTypographies,
+  gradientColoredChipBox,
   mainContainerBoxStyle,
 } from "../../../utils/muiComponentStyles";
 import { CodeIcon, EduIcon, ExpIcon } from "../../../assets/AssetExporter";
@@ -29,21 +30,21 @@ const softSkillList = [
   "Soft 6",
 ];
 
-const Index = ({ currentIndex, activeIndex }) => {
+const Index = ({ currentIndex, activeIndex, isSmall }) => {
   return (
     <Slide
       mountOnEnter
       timeout={500}
       unmountOnExit
       direction="left"
-      in={currentIndex == 2 && activeIndex === 2}
+      in={isSmall || (currentIndex == 2 && activeIndex === 2)}
     >
       <Box sx={mainContainerBoxStyle}>
-        <MainHeader leftDir={"200%"} variant="custom">
+        <MainHeader leftdir={isSmall ? "230%" : "200%"} variant="custom">
           Resume
         </MainHeader>
         <Grid spacing={8} mt={-4} container>
-          <Grid item sm={6}>
+          <Grid item xs={12} sm={6}>
             <Box my={2} display={"flex"} alignItems={"center"}>
               <Box component={EduIcon} sx={{ minWidth: 20, mr: 1 }} />
               <Typography
@@ -107,7 +108,7 @@ const Index = ({ currentIndex, activeIndex }) => {
               </Typography>
             </Box>
           </Grid>
-          <Grid item sm={6}>
+          <Grid item xs={12} sm={6}>
             <Box my={2} display={"flex"} alignItems={"center"}>
               <Box component={ExpIcon} sx={{ minWidth: 20, mr: 1 }} />
               <Typography
@@ -163,7 +164,7 @@ const Index = ({ currentIndex, activeIndex }) => {
               justifyContent="space-around"
             >
               {workSkillList?.map((skill, idx) => (
-                <Box key={idx} sx={coloredChipBox}>
+                <Box key={idx} sx={gradientColoredChipBox}>
                   {skill}
                 </Box>
               ))}
@@ -185,7 +186,7 @@ const Index = ({ currentIndex, activeIndex }) => {
               justifyContent="space-around"
             >
               {softSkillList?.map((skill, idx) => (
-                <Box key={idx} sx={coloredChipBox}>
+                <Box key={idx} sx={gradientColoredChipBox}>
                   {skill}
                 </Box>
               ))}

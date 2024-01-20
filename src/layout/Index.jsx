@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Topbar from "./Topbar.jsx";
 import Sidebar from "./Sidebar.jsx";
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, useMediaQuery, useTheme } from "@mui/material";
 import MainContainer from "./MainContainer.jsx";
 
 const Index = () => {
   const [currentTab, setCurrentTab] = useState(1);
+  const theme = useTheme();
+  const isXSmall = useMediaQuery(theme.breakpoints.down("sm"));
+  const [isSmall, setIsSmall] = useState(false);
+
+  useEffect(() => setIsSmall(isXSmall ? true : false), [isXSmall]);
 
   return (
     <>
@@ -16,7 +21,7 @@ const Index = () => {
             <Sidebar />
           </Grid>
           <Grid item xs={12} sm={12} md={8} lg={8}>
-            <MainContainer currentIndex={currentTab} />
+            <MainContainer currentIndex={currentTab} isSmall={isSmall} />
           </Grid>
         </Grid>
       </Container>

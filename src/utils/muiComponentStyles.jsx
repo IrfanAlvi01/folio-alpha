@@ -16,13 +16,12 @@ export const GradientTypography = styled(Box)(({ theme }) => ({
   WebkitTextFillColor: "transparent",
 }));
 
-export const MainHeader = styled(Typography)(({ theme, leftDir }) => ({
+export const MainHeader = styled(Typography)(({ theme, leftdir }) => ({
   fontSize: "2.5rem",
   fontStyle: "normal",
   textTransform: "uppercase",
-  // background: "pink",
   fontWeight: "500",
-  lineHeight: "40px" /* 100% */,
+  lineHeight: "40px",
   letterSpacing: "1px",
   fontFamily: "Poppins",
 
@@ -32,11 +31,19 @@ export const MainHeader = styled(Typography)(({ theme, leftDir }) => ({
     content: '""',
     position: "absolute",
     top: "50%",
-    left: leftDir,
+    left: leftdir,
     width: "252px",
     height: "2px",
     transform: "translate(-50%, -50%)",
     background: `linear-gradient(300deg, ${theme.palette.background.layoutA} 7.92%, ${theme.palette.background.gradientOne} 108.2%)`,
+  },
+
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "1.5rem",
+    fontWeight:"900",
+    "&::after": {
+      width: "130px",
+    },
   },
 }));
 
@@ -245,6 +252,7 @@ export const mainContainerBoxStyle = {
     padding: 4,
     textAlign: "left",
     borderRadius: "20px",
+    marginBottom: 4,
     backgroundColor: (theme) => theme.palette.background.paperBox,
   },
 };
@@ -255,6 +263,9 @@ export const coloredBoxStyle1 = {
     py: 2,
     borderRadius: "20px",
     backgroundColor: "background.mainColoredBox1",
+    // "@media (max-width:450px)": {
+    //   width: "240%",
+    // },
   },
 };
 
@@ -272,6 +283,15 @@ export const coloredChipBox = {
     p: "4px 8px",
     borderRadius: 2,
     backgroundColor: "background.topbarIcon",
+  },
+};
+
+export const gradientColoredChipBox = {
+  "&.MuiBox-root": {
+    p: "4px 8px",
+    borderRadius: 2,
+    color: "white",
+    background: "linear-gradient(300deg, #EC1B09 7.92%, #FF9C1A 108.2%)",
   },
 };
 

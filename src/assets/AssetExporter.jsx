@@ -20,6 +20,7 @@ export { default as DownloadIcon } from "./images/social_icons/download.svg?reac
 export { default as LinkedInIcon } from "./images/social_icons/linkedin.svg?react";
 export { default as GitHubIcon } from "./images/social_icons/github.svg?react";
 export { default as LeetCodeIcon } from "./images/social_icons/leetcode.svg?react";
+export { default as StackOverFlow } from "./images/social_icons/stackoverflow.svg?react";
 
 //Home Icon
 export { default as CodeIcon } from "./images/home/code.svg?react";
@@ -27,3 +28,16 @@ export { default as CodeIcon } from "./images/home/code.svg?react";
 //Resume Icon
 export { default as EduIcon } from "./images/resume/education.svg?react";
 export { default as ExpIcon } from "./images/resume/exp.svg?react";
+
+//infostackcopy
+export { default as CheckedIcon } from "./images/infostack_copy/checked.svg?react";
+export { default as CopyIcon } from "./images/infostack_copy/copy.svg?react";
+
+//Light Dark Mode Icon
+
+export { default as DarkModeIcon } from "./images/theme_mode_fab/darkmode.svg?react";
+export { default as LightModeIcon } from "./images/theme_mode_fab/lightmode.svg?react";
+
+//dummy PDF
+export { default as Resume } from "../assets/dummy.pdf";
+// export { default as Resume } from "../assets/Irfan's Resume.pdf";
