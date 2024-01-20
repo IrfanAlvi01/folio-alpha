@@ -110,7 +110,7 @@ export const globleTypographies = {
   },
   "&.MuiTypography-whatIDo": {
     my: 2,
-    color: "#000",
+    color: "font.mainInfo",
     fontFamily: "Poppins",
     fontSize: "2rem",
     fontStyle: "normal",
@@ -159,6 +159,7 @@ export const globleTypographies = {
     fontStyle: "normal",
     fontWeight: 400,
     lineHeight: "20px" /* 187.5% */,
+    whiteSpace: "pre-line"
   },
   "&.MuiTypography-education": {
     color: "font.mainInfo",

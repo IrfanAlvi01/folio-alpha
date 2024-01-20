@@ -12,14 +12,14 @@ const whatIDoList = [
   {
     icon: CodeIcon,
     heading: "Web Development",
-    text: `In the dynamic realm of web development, I've honed my skills with nearly two years of dedicated experience in React JS. Crafting responsive and user-centric interfaces using frontend libraries such as Material-UI (MUI) and Tailwind CSS has been my forte. While my expertise in React JS remains robust, I've ventured into the realms of Next.js and Node.js, demonstrating a keen eagerness to embrace emerging technologies to contribute effectively to a diverse range of projects.
-    `,
+    text: `In the dynamic realm of web development, I've honed my skills with nearly two years of dedicated experience in React JS.\n\nCrafting responsive and user-centric interfaces using frontend libraries such as Material-UI (MUI) and Tailwind CSS has been my forte.\n\nWhile my expertise in React JS remains robust, I've ventured into the realms of Next.js and Node.js, demonstrating a keen eagerness to embrace emerging technologies to contribute effectively to a diverse range of projects.`,
   },
   {
     icon: CodeIcon,
     heading: "Freelancing Odyssey",
-    text: `My freelancing journey is defined by adaptability, excellence, and a track record of completing 100+ orders across diverse programming languages with a remarkable 4.9/5 rating from 85+ reviews. My success extends beyond technical proficiency to effective communication, collaboration, and problem-solving. I differentiate myself by actively embracing new technologies like Three.js, Flutter, Nuxt.js, showcasing a dedicated commitment to staying at the forefront of industry trends.`,
+    text: `My freelancing journey is defined by adaptability, excellence, and a track record of completing 100+ orders across diverse programming languages with a remarkable 4.9/5 rating from 85+ reviews.\n\nMy success extends beyond technical proficiency to effective communication, collaboration, and problem-solving.\n\nI differentiate myself by actively embracing new technologies like Three.js, Flutter, Nuxt.js, showcasing a dedicated commitment to staying at the forefront of industry trends.`,
   },
+  
   // {
   //   icon: CodeIcon,
   //   heading: "Mentorship",
@@ -66,7 +66,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
           enthusiasm. My journey is defined by a commitment to excellence,
           proactive problem-solving, and a continuous pursuit of creativity.
           Eager to contribute my skills to collaborative projects, I am poised
-          to elevate digital experiences with every opport.
+          to elevate digital experiences with every opportunity.
         </Typography>
         <Typography component="p" sx={globleTypographies} variant="whatIDo">
           What I Do!
