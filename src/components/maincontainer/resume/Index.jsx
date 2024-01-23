@@ -12,22 +12,26 @@ import {
 import { CodeIcon, EduIcon, ExpIcon } from "../../../assets/AssetExporter";
 
 const workSkillList = [
-  "Skill 1",
-  "Skill 2",
-  "Skill 3",
-  "Skill 4",
-  "Skill 5",
-  "Skill 6",
-  "Skill 7",
-  "Skill 8",
+  "ReactJs",
+  "Javascript",
+  "Html",
+  "CSS",
+  "Github",
+  "MERN",
+  "JAVA",
+  "MUI",
+  "NextJs",
+  "Node.Js",
+  "Flutter",
 ];
 const softSkillList = [
-  "Soft 1",
-  "Soft 2",
-  "Soft 3",
-  "Soft 4",
-  "Soft 5",
-  "Soft 6",
+  "Teamplayer",
+  "Leadership",
+  "Communication",
+  "Problem-solving",
+  "Ambitious",
+  "Motivated",
+  "Adaptability",
 ];
 
 const Index = ({ currentIndex, activeIndex, isSmall }) => {
@@ -52,7 +56,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
                 sx={globleTypographies}
                 variant="education"
               >
-                Text
+                Education:-
               </Typography>
             </Box>
             <Box sx={coloredBoxStyle1}>
@@ -62,7 +66,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
                 sx={globleTypographies}
                 variant="education1"
               >
-                2020-2021
+                10/2018 - 05/2022
               </Typography>
               <Typography
                 my={1}
@@ -70,7 +74,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
                 sx={globleTypographies}
                 variant="education2"
               >
-                With a focus
+                BSCS
               </Typography>
               <Typography
                 my={1}
@@ -78,7 +82,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
                 sx={globleTypographies}
                 variant="education3"
               >
-                With a focus
+                KFUEIT, RYK
               </Typography>
             </Box>
             <Box mt={2} sx={coloredBoxStyle2}>
@@ -88,7 +92,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
                 sx={globleTypographies}
                 variant="education1"
               >
-                2020-2021
+                05/2016 - 06/2018
               </Typography>
               <Typography
                 my={1}
@@ -96,7 +100,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
                 sx={globleTypographies}
                 variant="education2"
               >
-                With a focus
+                F.Sc (Pre-Eng)
               </Typography>
               <Typography
                 my={1}
@@ -104,7 +108,8 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
                 sx={globleTypographies}
                 variant="education3"
               >
-                With a focus
+                Khawaja Fareed Post Graduate College,
+                RYKssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
               </Typography>
             </Box>
           </Grid>
@@ -116,7 +121,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
                 sx={{ ...globleTypographies, fontWeight: 700 }}
                 variant="education"
               >
-                text
+                Experience:-
               </Typography>
             </Box>
             <Box sx={coloredBoxStyle2}>
@@ -126,7 +131,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
                 sx={globleTypographies}
                 variant="education1"
               >
-                2020-2021
+                12/2022 - Present
               </Typography>
               <Typography
                 my={1}
@@ -134,7 +139,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
                 sx={globleTypographies}
                 variant="education2"
               >
-                With a focus
+                Front End Developer
               </Typography>
               <Typography
                 my={1}
@@ -142,7 +147,33 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
                 sx={globleTypographies}
                 variant="education3"
               >
-                With a focus
+                SoftCircles, Lahore
+              </Typography>
+            </Box>
+            <Box my={2} sx={coloredBoxStyle2}>
+              <Typography
+                my={1}
+                component="p"
+                sx={globleTypographies}
+                variant="education1"
+              >
+                08/2019 - Present
+              </Typography>
+              <Typography
+                my={1}
+                component="p"
+                sx={globleTypographies}
+                variant="education2"
+              >
+                Freelancer
+              </Typography>
+              <Typography
+                my={1}
+                component="p"
+                sx={globleTypographies}
+                variant="education3"
+              >
+                Fiverr, Remote
               </Typography>
             </Box>
           </Grid>
@@ -154,7 +185,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
               sx={globleTypographies}
               variant="workSkillHeading"
             >
-              Heading 1
+              Hard Skills:-
             </Typography>
             <Box
               mt={2}
@@ -176,7 +207,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
               sx={globleTypographies}
               variant="workSkillHeading"
             >
-              Heading 2
+              Soft Skills:-
             </Typography>
             <Box
               mt={2}
