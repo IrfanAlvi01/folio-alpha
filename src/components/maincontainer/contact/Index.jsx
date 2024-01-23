@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import {
   Box,
   Button,
-  Grid,
   Slide,
+  Snackbar,
   Stack,
   TextField,
   Typography,
@@ -17,7 +18,18 @@ import {
 } from "../../../utils/muiComponentStyles";
 
 const Index = ({ currentIndex, activeIndex, isSmall }) => {
-  const [form, setForm] = useState({ email: "", username: "", message: "" });
+  const [form, setForm] = useState({
+    user_email: "",
+    user_name: "",
+    message: "",
+  });
+
+  const [openSnack, setOpenSnack] = useState(false);
+  const [snackmessage, setSnackMessage] = useState("");
+
+  const handleClose = () => {
+    setOpenSnack(false);
+  };
 
   const handleStateChange = (e) => {
     setForm({
@@ -28,7 +40,32 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form);
+
+    emailjs
+      .sendForm(
+        "service_cx3l409",
+        "template_5lzu2hn",
+        e.target,
+        "3dfSzWhZNrZMRxzQU"
+      )
+      .then(
+        (result) => {
+          setSnackMessage("Your message has been sent");
+          setOpenSnack(true);
+          console.log(result.text);
+        },
+        (error) => {
+          setSnackMessage("Something went wrong");
+          setOpenSnack(true);
+          console.log(error.text);
+        }
+      );
+
+    setForm({
+      user_email: "",
+      user_name: "",
+      message: "",
+    });
   };
 
   return (
@@ -37,14 +74,14 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
       timeout={500}
       unmountOnExit
       direction="left"
-      in={isSmall || (currentIndex == 4 && activeIndex === 4)}
+      in={isSmall || (currentIndex === 4 && activeIndex === 4)}
     >
       <Box sx={mainContainerBoxStyle}>
         <MainHeader leftdir={isSmall ? "185%" : "180%"} variant="custom">
           Contact
         </MainHeader>
         <Stack sx={sidebarInfoStackStyle}>
-          <Typography sx={{ globleTypographies, mb: 2 }}>
+          <Typography sx={{ ...globleTypographies, mb: 2 }}>
             Looking to <strong>elevate your project?</strong>
             <strong> Hire us today!</strong> Reach out through this form.
           </Typography>
@@ -53,9 +90,10 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
               fullWidth
               sx={{ ...textfieldStyle, mt: 1 }}
               label="Name"
+              type="text"
               required
-              rows={4}
-              name="username"
+              value={form.user_name}
+              name="user_name"
               onChange={handleStateChange}
               InputLabelProps={{
                 style: { color: "#6D7B88" },
@@ -65,9 +103,10 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
               fullWidth
               sx={{ ...textfieldStyle, mt: 1 }}
               label="Email"
+              type="email"
               required
-              rows={4}
-              name="email"
+              value={form.user_email}
+              name="user_email"
               onChange={handleStateChange}
               InputLabelProps={{
                 style: { color: "#6D7B88" },
@@ -79,17 +118,30 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
               required
               sx={{ ...textfieldStyle, mt: 1 }}
               label="Message"
-              rows={4}
+              rows={6}
+              value={form.message}
               name="message"
               onChange={handleStateChange}
               InputLabelProps={{
                 style: { color: "#6D7B88" },
               }}
             />
-            <Button variant="gradientOutlined" sx={{ mt: 1 }} type="submit">
+            <Button
+              variant="gradientOutlined"
+              sx={{ mt: 1 }}
+              type="submit"
+              value="send"
+            >
               Submit
             </Button>
           </form>
+          <Snackbar
+            open={openSnack}
+            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+            autoHideDuration={3000}
+            onClose={handleClose}
+            message={snackmessage}
+          />
         </Stack>
       </Box>
     </Slide>

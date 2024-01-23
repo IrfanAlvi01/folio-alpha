@@ -38,6 +38,6 @@ export { default as CopyIcon } from "./images/infostack_copy/copy.svg?react";
 export { default as DarkModeIcon } from "./images/theme_mode_fab/darkmode.svg?react";
 export { default as LightModeIcon } from "./images/theme_mode_fab/lightmode.svg?react";
 
-//dummy PDF
-export { default as Resume } from "../assets/dummy.pdf";
-// export { default as Resume } from "../assets/Irfan's Resume.pdf";
+//Irfan's Resume PDF
+
+export { default as Resume } from "../assets/resume.pdf";
