@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Grid, Slide, Typography } from "@mui/material";
 import {
+  GradientLine,
   MainHeader,
   coloredBoxStyle1,
   globleTypographies,
@@ -12,14 +13,14 @@ const whatIDoList = [
   {
     icon: CodeIcon,
     heading: "Web Development",
-    text: `In the dynamic realm of web development, I've honed my skills with nearly two years of dedicated experience in React JS.\n\nCrafting responsive and user-centric interfaces using frontend libraries such as Material-UI (MUI) and Tailwind CSS has been my forte.\n\nWhile my expertise in React JS remains robust, I've ventured into the realms of Next.js and Node.js, demonstrating a keen eagerness to embrace emerging technologies to contribute effectively to a diverse range of projects.`,
+    text: `In the dynamic realm of web development, I've honed my skills with nearly two years of dedicated experience in React JS.\nCrafting responsive and user-centric interfaces using frontend libraries such as Material-UI (MUI) and Tailwind CSS has been my forte.\nWhile my expertise in React JS remains robust, I've ventured into the realms of Next.js and Node.js, demonstrating a keen eagerness to embrace emerging technologies to contribute effectively to a diverse range of projects.`,
   },
   {
     icon: CodeIcon,
     heading: "Freelancing Odyssey",
-    text: `My freelancing journey is defined by adaptability, excellence, and a track record of completing 100+ orders across diverse programming languages with a remarkable 4.9/5 rating from 85+ reviews.\n\nMy success extends beyond technical proficiency to effective communication, collaboration, and problem-solving.\n\nI differentiate myself by actively embracing new technologies like Three.js, Flutter, Nuxt.js, showcasing a dedicated commitment to staying at the forefront of industry trends.`,
+    text: `My freelancing journey is defined by adaptability, excellence, and a track record of completing 100+ orders across diverse programming languages with a remarkable 4.9/5 rating from 85+ reviews.\nMy success extends beyond technical proficiency to effective communication, collaboration, and problem-solving.\nI differentiate myself by actively embracing new technologies like Three.js, Flutter, Nuxt.js, showcasing a dedicated commitment to staying at the forefront of industry trends.`,
   },
-  
+
   // {
   //   icon: CodeIcon,
   //   heading: "Mentorship",
@@ -49,9 +50,10 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
       in={isSmall || (currentIndex == 1 && activeIndex === 1)}
     >
       <Box sx={mainContainerBoxStyle}>
-        <MainHeader leftdir={isSmall ? "180%" : "180%"} variant="custom">
-          About Me
-        </MainHeader>
+        <Box display={"flex"} gap={2}>
+          <MainHeader variant="custom">About Me</MainHeader>
+          <GradientLine />
+        </Box>
         {/* <Typography variant="body1">hi</Typography> */}
         <Typography
           my={2}
@@ -75,7 +77,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
           {whatIDoList?.map((item, idx) => (
             <Grid display={"flex"} item key={idx} sm={6}>
               <Box sx={coloredBoxStyle1}>
-                <Box mb={1} display={"flex"} alignItems={"center"}>
+                <Box my={1} display={"flex"} alignItems={"center"}>
                   <Box component={CodeIcon} sx={{ minWidth: 20, mr: 1 }} />
                   <Typography
                     component="span"

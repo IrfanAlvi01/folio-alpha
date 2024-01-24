@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Grid, Slide, Typography } from "@mui/material";
 import {
+  GradientLine,
   MainHeader,
   coloredBoxStyle1,
   coloredBoxStyle2,
@@ -25,13 +26,12 @@ const workSkillList = [
   "Flutter",
 ];
 const softSkillList = [
+  "Ambitious",
   "Teamplayer",
   "Leadership",
+  "Adaptability",
   "Communication",
   "Problem-solving",
-  "Ambitious",
-  "Motivated",
-  "Adaptability",
 ];
 
 const Index = ({ currentIndex, activeIndex, isSmall }) => {
@@ -44,9 +44,10 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
       in={isSmall || (currentIndex == 2 && activeIndex === 2)}
     >
       <Box sx={mainContainerBoxStyle}>
-        <MainHeader leftdir={isSmall ? "230%" : "200%"} variant="custom">
-          Resume
-        </MainHeader>
+        <Box display={"flex"} gap={2}>
+          <MainHeader variant="custom">Resume</MainHeader>
+          <GradientLine />
+        </Box>
         <Grid spacing={8} mt={-4} container>
           <Grid item xs={12} sm={6}>
             <Box my={2} display={"flex"} alignItems={"center"}>
@@ -108,8 +109,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
                 sx={globleTypographies}
                 variant="education3"
               >
-                Khawaja Fareed Post Graduate College,
-                RYKssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+                Post Graduate KF College , RYK
               </Typography>
             </Box>
           </Grid>
@@ -192,7 +192,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
               gap={2}
               display="flex"
               flexWrap="wrap"
-              justifyContent="space-around"
+              justifyContent="left"
             >
               {workSkillList?.map((skill, idx) => (
                 <Box key={idx} sx={gradientColoredChipBox}>
@@ -214,7 +214,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
               gap={2}
               display="flex"
               flexWrap="wrap"
-              justifyContent="space-around"
+              justifyContent="left"
             >
               {softSkillList?.map((skill, idx) => (
                 <Box key={idx} sx={gradientColoredChipBox}>

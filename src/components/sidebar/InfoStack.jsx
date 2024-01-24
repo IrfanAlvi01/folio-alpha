@@ -43,6 +43,7 @@ const InfoStack = () => {
               <Typography sx={globleTypographies} variant="infoValue">
                 {item.value}
                 <IconButton
+                  color="inherit"
                   size="small"
                   onClick={() => handleClick(item.value, idx)}
                 >

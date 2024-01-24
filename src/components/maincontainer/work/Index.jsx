@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Grid, Slide, Typography } from "@mui/material";
 import {
+  GradientLine,
   MainHeader,
   coloredBoxStyle1,
   coloredBoxStyle2,
@@ -50,9 +51,10 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
       in={isSmall || (currentIndex == 3 && activeIndex === 3)}
     >
       <Box sx={mainContainerBoxStyle}>
-        <MainHeader leftdir={isSmall ? "295%" : "225%"} variant="custom">
-          Work
-        </MainHeader>
+        <Box display={"flex"} gap={2}>
+          <MainHeader variant="custom">Work</MainHeader>
+          <GradientLine />
+        </Box>
         <Grid spacing={4} mt={2} container>
           {projectList.map((item, idx) => (
             <Grid item xs={12} sm={12} md={6} key={idx}>
@@ -66,7 +68,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
                 Text
               </Typography>
             </Box> */}
-              <Box  sx={coloredBoxStyle1}>
+              <Box sx={coloredBoxStyle1}>
                 <Box
                   component="img"
                   sx={{ width: "-webkit-fill-available", borderRadius: "20px" }}

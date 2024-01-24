@@ -15,6 +15,7 @@ import {
   globleTypographies,
   mainContainerBoxStyle,
   sidebarInfoStackStyle,
+  GradientLine,
 } from "../../../utils/muiComponentStyles";
 
 const Index = ({ currentIndex, activeIndex, isSmall }) => {
@@ -77,9 +78,10 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
       in={isSmall || (currentIndex === 4 && activeIndex === 4)}
     >
       <Box sx={mainContainerBoxStyle}>
-        <MainHeader leftdir={isSmall ? "185%" : "180%"} variant="custom">
-          Contact
-        </MainHeader>
+        <Box display={"flex"} gap={2}>
+          <MainHeader variant="custom">Contact</MainHeader>
+          <GradientLine />
+        </Box>
         <Stack sx={sidebarInfoStackStyle}>
           <Typography sx={{ ...globleTypographies, mb: 2 }}>
             Looking to <strong>elevate your project?</strong>

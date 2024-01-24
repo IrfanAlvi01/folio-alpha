@@ -16,7 +16,7 @@ export const GradientTypography = styled(Box)(({ theme }) => ({
   WebkitTextFillColor: "transparent",
 }));
 
-export const MainHeader = styled(Typography)(({ theme, leftdir }) => ({
+export const MainHeader = styled(Typography)(({ theme }) => ({
   fontSize: "2.5rem",
   fontStyle: "normal",
   textTransform: "uppercase",
@@ -24,26 +24,29 @@ export const MainHeader = styled(Typography)(({ theme, leftdir }) => ({
   lineHeight: "40px",
   letterSpacing: "1px",
   fontFamily: "Poppins",
+  "@media (max-width:390px)": {
+    fontSize: "1.3rem",
+  },
+}));
 
+export const GradientLine = styled(Typography)(({ theme }) => ({
   position: "relative",
+
+  width: "35%",
+  backgroundColor: "",
 
   "&::after": {
     content: '""',
     position: "absolute",
     top: "50%",
-    left: leftdir,
-    width: "252px",
+    left: "0",
+    width: "100%",
     height: "2px",
-    transform: "translate(-50%, -50%)",
     background: `linear-gradient(300deg, ${theme.palette.background.layoutA} 7.92%, ${theme.palette.background.gradientOne} 108.2%)`,
   },
 
-  [theme.breakpoints.down("sm")]: {
-    fontSize: "1.5rem",
-    fontWeight:"900",
-    "&::after": {
-      width: "130px",
-    },
+  [theme.breakpoints.down("md")]: {
+    width: "46%",
   },
 }));
 
@@ -107,6 +110,9 @@ export const globleTypographies = {
     fontFamily: "Raleway",
     textTransform: "capitalize",
     color: "font.sidebarInfoValue",
+    "@media (max-width:370px)": {
+      fontSize: "8px",
+    },
   },
   "&.MuiTypography-whatIDo": {
     my: 2,
@@ -149,6 +155,7 @@ export const globleTypographies = {
     fontFamily: "Poppins",
     fontSize: "24px",
     fontStyle: "normal",
+    mb: 1,
     fontWeight: 600,
     lineHeight: "20px" /* 187.5% */,
   },
@@ -159,7 +166,7 @@ export const globleTypographies = {
     fontStyle: "normal",
     fontWeight: 400,
     lineHeight: "20px" /* 187.5% */,
-    whiteSpace: "pre-line"
+    whiteSpace: "pre-line",
   },
   "&.MuiTypography-education": {
     color: "font.mainInfo",
@@ -200,6 +207,8 @@ export const globleTypographies = {
     fontStyle: "normal",
     fontWeight: 500,
     lineHeight: "20px",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
   },
 };
 
