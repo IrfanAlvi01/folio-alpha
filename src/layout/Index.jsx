@@ -14,11 +14,11 @@ const Index = () => {
 
   return (
     <>
-      <Container disableGutters sx={{ overflow: "" }}>
+      <Container disableGutters sx={{ overflowX: "" }}>
         <Topbar currentTab={currentTab} setCurrentTab={setCurrentTab} />
         <Grid spacing={2} container mt={0}>
           <Grid item xs={12} sm={12} md={4} lg={4}>
-            <Box position={"sticky"} top={-50}>
+            <Box position={"sticky"} top={50}>
               <Sidebar />
             </Box>
           </Grid>

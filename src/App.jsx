@@ -22,7 +22,7 @@ function App() {
         sx={{
           position: "fixed",
           top: 50,
-          right: isHovered ? 0 : -40,
+          right: isHovered ? 0 : -25,
           transition: "right 0.5s",
           background: isDarkTheme
             ? "Gainsboro"
