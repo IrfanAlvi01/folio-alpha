@@ -66,6 +66,8 @@ const style = {
 const Index = ({ currentIndex, activeIndex, isSmall }) => {
   const [open, setOpen] = useState(false);
 
+  // const handleModalOpen = () => {};
+
   return (
     <Slide
       mountOnEnter
@@ -99,7 +101,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
               >
                 <Box
                   component="img"
-                  sx={{ width: "-webkit-fill-available", borderRadius: "20px" }}
+                  sx={{ width: "100%", borderRadius: "20px" }}
                   src={item?.mainImage}
                 />
                 <Typography
@@ -124,7 +126,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
         </Grid>
 
         <Modal
-          open={open !== false}
+          open={open == 1 || open == 2}
           onClose={() => setOpen(false)}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
@@ -154,7 +156,7 @@ function Item(props) {
       <Box
         component={"img"}
         sx={{
-          width: "-webkit-fill-available",
+          width: "100%",
           height: "500px",
           borderRadius: "20px",
           "@media (max-width:850px)": {
