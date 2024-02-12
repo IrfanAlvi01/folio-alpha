@@ -3,6 +3,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import {
   sidebarStackStyle,
   GradientTypography,
+  globleTypographies,
 } from "../utils/muiComponentStyles";
 import InfoStack from "../components/sidebar/InfoStack";
 import { BadgeStack } from "../components/ComponentExporter";
@@ -30,6 +31,7 @@ const Sidebar = () => {
         </GradientTypography>
         <Typography variant="name"> Wambui</Typography>
       </Stack>
+      {/* <Typography component={"p"} variant={globleTypographies} mt={2}>Front-End Developer</Typography> */}
 
       <BadgeStack />
       <InfoStack />
