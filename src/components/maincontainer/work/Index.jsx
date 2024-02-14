@@ -25,18 +25,21 @@ const projectList = [
     id: 1,
     name: "360Alert",
     desc: "Some description",
+    link: "",
     mainImage: Alert360_Data[0].image,
   },
   {
     id: 2,
     name: "KEPLER",
     desc: "Some description",
+    link: "",
     mainImage: Kepler_Data[0].image,
   },
   {
     id: 3,
     name: "Name3",
     desc: "Some description",
+    link: "https://www.facebook.com",
     mainImage:
       "https://plus.unsplash.com/premium_photo-1680667682187-52fd5e203efb?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
@@ -44,6 +47,7 @@ const projectList = [
     id: 4,
     name: "Name4",
     desc: "Some description",
+    link: "https://www.youtube.com",
     mainImage:
       "https://plus.unsplash.com/premium_photo-1680667682187-52fd5e203efb?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
@@ -66,7 +70,13 @@ const style = {
 const Index = ({ currentIndex, activeIndex, isSmall }) => {
   const [open, setOpen] = useState(false);
 
-  // const handleModalOpen = () => {};
+  const handleClick = (id, link) => {
+    if (id === 1 || id === 2) {
+      setOpen(id);
+    } else {
+      window.open(link);
+    }
+  };
 
   return (
     <Slide
@@ -96,7 +106,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
             </Box> */}
               <Box
                 sx={coloredBoxStyle1}
-                onClick={() => setOpen(item.id)}
+                onClick={() => handleClick(item.id, item.link)}
                 style={{ cursor: "pointer" }}
               >
                 <Box
