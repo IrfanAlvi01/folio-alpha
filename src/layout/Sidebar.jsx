@@ -23,21 +23,15 @@ const Sidebar = () => {
           transform: "translateY(-60%)",
         }}
         src={Avatar}
-        // src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&w=350&dpr=2"
       />
       <Stack gap={0.5} mt={14} direction={"row"}>
         <GradientTypography component="span">
-          <Typography variant="name"> Beatrice</Typography>
+          <Typography variant="name"> Irfan</Typography>
         </GradientTypography>
-        <Typography variant="name"> Wambui</Typography>
+        <Typography variant="name"> Alvi</Typography>
       </Stack>
-      {/* <Typography component={"p"} variant={globleTypographies} mt={2}>Front-End Developer</Typography> */}
-
       <BadgeStack />
       <InfoStack />
-      {/* <Box sx={sidebarMainBoxStyle}>
-        <Box>Sidebar</Box>
-      </Box> */}
     </Stack>
   );
 };
