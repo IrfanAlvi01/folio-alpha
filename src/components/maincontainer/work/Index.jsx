@@ -17,39 +17,84 @@ import {
   mainContainerBoxStyle,
 } from "../../../utils/muiComponentStyles";
 import { EduIcon, ExpIcon } from "../../../assets/AssetExporter";
-import { Alert360_Data, Kepler_Data } from "../../../assets/WorkImageExporter";
+import {
+  Alert360_Data,
+  BreakFast,
+  Breakfast_Data,
+  ImageStory_Data,
+  Kepler_Data,
+  PathFind_Data,
+  PathFinder,
+  PizzaTown,
+  SorobonResort,
+  UMate_Data,
+  WhereBy,
+} from "../../../assets/WorkImageExporter";
 import Carousel from "react-material-ui-carousel";
 
 const projectList = [
   {
     id: 1,
     name: "360Alert",
-    desc: "Some description",
-    link: "",
+    desc: "What's Missing From Your Hospital Security System? · Alert Systems and Panic Buttons Can Save Lives · Enter 360Alert: The App that Fills Your Security Gaps.",
+    link: "local",
     mainImage: Alert360_Data[0].image,
   },
   {
     id: 2,
     name: "KEPLER",
-    desc: "Some description",
-    link: "",
+    desc: "Material UI is an open-source React component library that implements Google's Material Design. It's comprehensive and can be used in production out of the box.",
+    link: "local",
     mainImage: Kepler_Data[0].image,
   },
   {
     id: 3,
-    name: "Name3",
-    desc: "Some description",
-    link: "https://www.facebook.com",
-    mainImage:
-      "https://plus.unsplash.com/premium_photo-1680667682187-52fd5e203efb?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Pizza Town",
+    desc: "It's hot, and succulent at the same time. It's truly a wonderful taste when you take that first bite, and al the flavors of the sauce, cheese",
+    link: "https://irfanalvi01.github.io/pizza-restaurant-vuejs/",
+    mainImage: `${PizzaTown}`,
   },
   {
     id: 4,
-    name: "Name4",
-    desc: "Some description",
-    link: "https://www.youtube.com",
-    mainImage:
-      "https://plus.unsplash.com/premium_photo-1680667682187-52fd5e203efb?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Sorobon Resort",
+    desc: "Best Price Guarantee. Book at Auchrannie Resort, Brodick. No Reservation Costs. Great Rates. Villas. Hotels. Flight + Hotel. ",
+    link: "https://book.sorobonbeachresort.com",
+    mainImage: `${SorobonResort}`,
+  },
+  {
+    id: 5,
+    name: "WhereBy Site",
+    desc: "Best Price Guarantee. Book at Auchrannie Resort, Brodick. No Reservation Costs. Great Rates. Villas. Hotels. Flight + Hotel. ",
+    link: "https://whereby-irfanalvi01s-projects.vercel.app/",
+    mainImage: `${WhereBy}`,
+  },
+  {
+    id: 6,
+    name: "uMate Site",
+    desc: "Breakfast offers fantastic signature plates that will dazzle your taste buds. We also realize nobody builds a better omelet, pa ncake, salad or sandwich",
+    link: "local",
+    mainImage: UMate_Data[0].image,
+  },
+  {
+    id: 7,
+    name: "Path Finder",
+    desc: "Breakfast offers fantastic signature plates that will dazzle your taste buds. We also realize nobody builds a better omelet, pa ncake, salad or sandwich",
+    link: "local",
+    mainImage: `${PathFinder}`,
+  },
+  {
+    id: 8,
+    name: "BreakFast App",
+    desc: "Breakfast offers fantastic signature plates that will dazzle your taste buds. We also realize nobody builds a better omelet, pa ncake, salad or sandwich",
+    link: "local",
+    mainImage: `${BreakFast}`,
+  },
+  {
+    id: 9,
+    name: "Image to Story (AI)",
+    desc: "Breakfast offers fantastic signature plates that will dazzle your taste buds. We also realize nobody builds a better omelet, pa ncake, salad or sandwich",
+    link: "local",
+    mainImage: ImageStory_Data[0].image,
   },
 ];
 
@@ -71,7 +116,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
   const [open, setOpen] = useState(false);
 
   const handleClick = (id, link) => {
-    if (id === 1 || id === 2) {
+    if (link === "local") {
       setOpen(id);
     } else {
       window.open(link);
@@ -101,7 +146,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
                 sx={globleTypographies}
                 variant="education"
               >
-                Text
+                Texto
               </Typography>
             </Box> */}
               <Box
@@ -136,7 +181,7 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
         </Grid>
 
         <Modal
-          open={open == 1 || open == 2}
+          open={open}
           onClose={() => setOpen(false)}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
@@ -149,6 +194,20 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
                   ))
                 : open === 2
                 ? Kepler_Data.map((item, idx) => <Item key={idx} item={item} />)
+                : open === 6
+                ? UMate_Data.map((item, idx) => <Item key={idx} item={item} />)
+                : open === 7
+                ? PathFind_Data.map((item, idx) => (
+                    <Item key={idx} item={item} />
+                  ))
+                : open === 8
+                ? Breakfast_Data.map((item, idx) => (
+                    <Item key={idx} item={item} />
+                  ))
+                : open === 9
+                ? ImageStory_Data.map((item, idx) => (
+                    <Item key={idx} item={item} />
+                  ))
                 : null}
             </Carousel>
           </Box>
