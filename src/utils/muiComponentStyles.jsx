@@ -90,6 +90,21 @@ export const BadgeBox = styled(Box)(({ theme }) => ({
   justifyContent: "center",
 }));
 
+export const ModalBox = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "80%",
+  height: `calc(0.83 * (window.innerHeight * 0.8))`,
+  backgroundColor: theme.palette.background.paperBox,
+  border: "2px solid #000",
+  borderRadius: 20,
+  padding: 40,
+  boxShadow: 24,
+  p: 4,
+}));
+
 export const globleTypographies = {
   "&.MuiTypography-infoTitle": {
     fontSize: "14px",

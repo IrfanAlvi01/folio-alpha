@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Grid,
@@ -11,6 +11,7 @@ import {
 import {
   GradientLine,
   MainHeader,
+  ModalBox,
   coloredBoxStyle1,
   coloredBoxStyle2,
   globleTypographies,
@@ -98,22 +99,18 @@ const projectList = [
   },
 ];
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: "80%",
-  height: "90%",
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  borderRadius: 5,
-  boxShadow: 24,
-  p: 4,
+const mapArrayByOpen = {
+  1: Alert360_Data,
+  2: Kepler_Data,
+  6: UMate_Data,
+  7: PathFind_Data,
+  8: Breakfast_Data,
+  9: ImageStory_Data,
 };
 
 const Index = ({ currentIndex, activeIndex, isSmall }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState("close");
+  const [modalIndex, setModalIndex] = useState(0);
 
   const handleClick = (id, link) => {
     if (link === "local") {
@@ -122,6 +119,34 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
       window.open(link);
     }
   };
+
+  const handleOnClose = () => {
+    setOpen("close");
+    setModalIndex(0);
+  };
+
+  const changeModalImage = (e) => {
+    if (e.key === "ArrowLeft") {
+      // If supposed previous child is < 0 set it to last child
+      setModalIndex((prevIndex) =>
+        prevIndex - 1 < 0 ? mapArrayByOpen[open].length - 1 : prevIndex - 1
+      );
+    } else if (e.key === "ArrowRight") {
+      // If supposed next child is > length -1 set it to first child
+      setModalIndex((prevIndex) =>
+        prevIndex + 1 > mapArrayByOpen[open].length - 1 ? 0 : prevIndex + 1
+      );
+    }
+  };
+
+  // Set and cleanup the event listener
+  useEffect(() => {
+    document.addEventListener("keydown", changeModalImage);
+
+    return function cleanup() {
+      document.removeEventListener("keydown", changeModalImage);
+    };
+  }, [open]);
 
   return (
     <Slide
@@ -181,36 +206,18 @@ const Index = ({ currentIndex, activeIndex, isSmall }) => {
         </Grid>
 
         <Modal
-          open={open}
-          onClose={() => setOpen(false)}
+          open={open != "close"}
+          onClose={handleOnClose}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
         >
-          <Box sx={style}>
-            <Carousel>
-              {open === 1
-                ? Alert360_Data.map((item, idx) => (
-                    <Item key={idx} item={item} />
-                  ))
-                : open === 2
-                ? Kepler_Data.map((item, idx) => <Item key={idx} item={item} />)
-                : open === 6
-                ? UMate_Data.map((item, idx) => <Item key={idx} item={item} />)
-                : open === 7
-                ? PathFind_Data.map((item, idx) => (
-                    <Item key={idx} item={item} />
-                  ))
-                : open === 8
-                ? Breakfast_Data.map((item, idx) => (
-                    <Item key={idx} item={item} />
-                  ))
-                : open === 9
-                ? ImageStory_Data.map((item, idx) => (
-                    <Item key={idx} item={item} />
-                  ))
-                : null}
+          <ModalBox>
+            <Carousel index={modalIndex} sx={{ height: "100%" }} interval={3700}>
+              {mapArrayByOpen[open]?.map((item, idx) => (
+                <Item key={idx} item={item} />
+              ))}
             </Carousel>
-          </Box>
+          </ModalBox>
         </Modal>
       </Box>
     </Slide>
@@ -221,19 +228,18 @@ export default Index;
 
 function Item(props) {
   return (
-    <Paper>
+    <Paper sx={{ overflow: "hidden" }}>
       <Box
-        component={"img"}
         sx={{
-          width: "100%",
-          height: "500px",
           borderRadius: "20px",
-          "@media (max-width:850px)": {
-            height: "350px",
-          },
+          width: "100%",
+          paddingTop: "46%",
+          position: "relative",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundImage: `url(${props.item.image})`,
         }}
-        src={props.item.image}
-      />
+      ></Box>
     </Paper>
   );
 }
