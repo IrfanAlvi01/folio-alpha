@@ -32,7 +32,8 @@ const Topbar = ({ currentTab, setCurrentTab }) => {
       <Stack
         display={{ xs: "none", sm: "none", md: "flex" }}
         alignItems={"flex-end"}
-        mt={"2px"}
+        mt={2}
+        mb={2}
       >
         <Box sx={topbarBoxStyle}>
           {headerList?.map((item, idx) => (

@@ -11,7 +11,7 @@ import { Avatar } from "../assets/AssetExporter";
 
 const Sidebar = () => {
   return (
-    <Stack alignItems={"center"} sx={sidebarStackStyle}>
+    <Stack alignItems={"center"} mt={16.5} sx={sidebarStackStyle}>
       <Box
         component="img"
         sx={{

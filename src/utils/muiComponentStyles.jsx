@@ -27,6 +27,7 @@ export const MainHeader = styled(Typography)(({ theme }) => ({
   "@media (max-width:390px)": {
     fontSize: "1.3rem",
   },
+  whiteSpace: "nowrap",
 }));
 
 export const GradientLine = styled(Typography)(({ theme }) => ({
